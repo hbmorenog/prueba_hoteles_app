@@ -19,11 +19,9 @@
         <b-navbar-nav class="ml-auto">
           <b-nav-item-dropdown text="User" right>
             <!-- Using 'button-content' slot -->
-            <b-dropdown-item v-on:click="profile" v-if="is_auth"
-              >Profile</b-dropdown-item
+            <b-dropdown-item v-on:click="profile" >Profile</b-dropdown-item
             >
-            <b-dropdown-item v-on:click="partners" v-if="is_auth"
-              >Partners</b-dropdown-item
+            <b-dropdown-item v-on:click="partners" >Partners</b-dropdown-item
             >
             <b-dropdown-item v-on:click="registro">Registro</b-dropdown-item>
             <b-dropdown-item v-if="is_auth" href="#">Sign Out</b-dropdown-item>
