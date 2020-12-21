@@ -1,6 +1,6 @@
 <template>
   <b-container>
-    <b-form class="myform mt-5">
+    <b-form class="myform mt-5" v-on:submit.prevent="submit">
       <b-form-group id="input-group-1" label-for="input-1">
         <b-form-input
           id="email"
@@ -60,11 +60,11 @@
           id="description"
           type="text"
           v-model="form.description"
-          placeholder="Precio estándar habitación"
+          placeholder="Descripción del hotel"
           required
         ></b-form-input>
       </b-form-group>
-      <b-button v-on:click="submit" type="submit" variant="primary">Submit</b-button>
+      <b-button type="submit" variant="primary">Submit</b-button>
     </b-form>
   </b-container>
 </template>
@@ -93,6 +93,7 @@ export default {
         )
         .then((result) => {
           var profile = true;
+          this.$router.push({name: "user_profile", params:{ email: this.form.email  }})
         })
         .catch((error) => {
           if (error.response.status == 400) {
@@ -100,9 +101,9 @@ export default {
             this.$router.push({ path: "/registro" });
           }
         });
-      if (profile == true) {
-        this.$router.push({ name: "user_profile", params: { email: form.email } });
-      }
+
+       
+      
     },
   },
 };

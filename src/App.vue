@@ -62,23 +62,21 @@
       
       <Home v-if="this.$route.path==='/'"/>
       <router-view />
+      <Footer/>
     </div>
 
-    <div class="footer">
-      <h2>
-        Conditions of Use - Privacy Notice - Interest-Based Ads - © 2020,
-        Hotelify.com
-      </h2>
-    </div>
+    
   </div>
 </template>
 
 <script>
 import Home from "./components/Home";
+import Footer from "./components/Footer";
 export default {
   name: "App",
   components: {
     Home,
+    Footer
   },
 
   data: function () {
@@ -168,18 +166,5 @@ img {
   background: #fdfefe;
 }
 
-.footer {
-  margin: 0;
-  padding: 50px;
-  width: 100%;
-  background-color: #4390b1;
-  color: #e5e7e9;
 
-}
-
-.footer h2 {
-  text-align: center;
-  width: 100%;
-  font-size: 14px;
-}
 </style>

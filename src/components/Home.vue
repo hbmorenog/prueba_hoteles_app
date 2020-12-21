@@ -1,8 +1,8 @@
 <template>
   <div class="home" id="Home">
     <b-container class="mt-5">
-      <b-row justify-content-md-center class="d-flex justify-content-center">
-        <b-col v-for="(hotel, i) in hoteles" :key="i">
+      <b-row  class="">
+        <b-col class="col-md-4 p-2" v-for="(hotel, i) in hoteles" :key="i">
           <b-card
             thumbnail
             fluid
