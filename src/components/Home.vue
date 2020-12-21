@@ -20,7 +20,7 @@
               Correo: {{ hotel.email }}
             </b-card-text>
 
-            <b-button href="#" variant="primary">Ver mas</b-button>
+            <b-button v-on:click="verHotel(hotel.email)" href="#" variant="primary">Ver mas</b-button>
           </b-card>
         </b-col>
       </b-row>
@@ -45,5 +45,10 @@ export default {
       .get("https://g3m3-e9-hoteles-api.herokuapp.com/hoteles/resumen")
       .then((response) => (this.hoteles = response.data));
   },
+  methods: {
+    verHotel: function (hotel) {
+      this.$router.push({name: "user_profile", params:{ email: hotel }})
+    }
+  }
 };
 </script>
