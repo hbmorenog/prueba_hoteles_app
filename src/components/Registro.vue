@@ -98,7 +98,7 @@ export default {
         .catch((error) => {
           if (error.response.status == 400) {
             alert("El hotel ya existe", error.response.data);
-            this.$router.push({ path: "/registro" });
+            this.form = []
           }
         });
 
